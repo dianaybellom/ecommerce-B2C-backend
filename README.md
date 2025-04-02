@@ -19,7 +19,7 @@ Este es el backend de una plataforma de ecommerce desarrollado con [CodeIgniter 
 El frontend de este proyecto se encuentra en el repositorio https://github.com/dianaybellom/ecommerce-B2C.
 
 ## 🚀 Tecnologías Usadas
-- PHP 8.x
+- PHP 8.2.12
 - CodeIgniter 4.6
 - MySQL
 - XAMPP
@@ -49,16 +49,21 @@ Se utilizó MySQL como sistema de base de datos relacional. La tabla productos c
 Las siguientes capturas muestran la operaciones CRUD realizadas en Postman.
 
 **POST**
+![POST](https://github.com/user-attachments/assets/91fb7661-240f-4ce3-9a9f-de05aea44f90)
 
 **GET**
+![GET](https://github.com/user-attachments/assets/2380934f-cc4c-4479-b4f4-17d755e95946)
 
 **PUT**
+![PUT](https://github.com/user-attachments/assets/1b066c50-fd18-496b-934f-91e1ec334a6e)
 
 **DELETE**
+![DELETE](https://github.com/user-attachments/assets/1648eeee-97d9-453c-8a56-326316bd1508)
+
 
 ### Base de datos
 La siguiente captura muestra el contenido de la tabla productos en phpMyAdmin, evidenciando los datos insertados y los campos de fechas gestionados automáticamente por CodeIgniter.
-
+![database](https://github.com/user-attachments/assets/5cdd3297-71ba-4e3d-aa0c-9f1d57b3c57c)
 
 
 ## 📌 Instrucciones para Ejecutar
