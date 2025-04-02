@@ -9,3 +9,14 @@ $routes->get('/', 'Home::index');
 
 // habilita las rutas REST de productos
 $routes->resource('producto', ['controller' => 'ProductoController']);
+// habilita las rutas REST de usuarios
+$routes->post('register', 'AuthController::register');
+$routes->post('login', 'AuthController::login');
+$routes->get('logout', 'AuthController::logout');
+// habilita las rutas RESTful completo para pedidos
+$routes->resource('pedido'); 
+// Rutas para actualización de rol
+$routes->get('admin/usuarios', 'Admin::listUsers');
+$routes->put('admin/usuarios/(:num)/rol', 'Admin::setRole/$1');
+
+
