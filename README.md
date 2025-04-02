@@ -19,7 +19,7 @@ Este es el backend de una plataforma de ecommerce desarrollado con [CodeIgniter 
 El frontend de este proyecto se encuentra en el repositorio https://github.com/dianaybellom/ecommerce-B2C.
 
 ## 🚀 Tecnologías Usadas
-- PHP 8.x
+- PHP 8.2.12
 - CodeIgniter 4.6
 - MySQL
 - XAMPP
