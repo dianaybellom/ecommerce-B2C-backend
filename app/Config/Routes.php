@@ -15,6 +15,7 @@ $routes->post('login', 'AuthController::login');
 $routes->get('logout', 'AuthController::logout');
 // habilita las rutas RESTful completo para pedidos
 $routes->resource('pedido'); 
+$routes->get('mis-pedidos', 'Pedido::misPedidos');
 // Rutas para actualización de rol
 $routes->get('admin/usuarios', 'Admin::listUsers');
 $routes->put('admin/usuarios/(:num)/rol', 'Admin::setRole/$1');
