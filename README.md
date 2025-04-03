@@ -55,6 +55,7 @@ Este sistema sigue la estructura MVC (Modelo - Vista - Controlador) que propone 
 - Hay endpoints protegidos que requieren autenticación: Se valida la autenticación y el rol (por ejemplo, ADMIN) usando `session()->get('usuario_id')` y `session()->get('rol')` desde los controladores. Se protegen las operaciones:  crear pedidos, visualizar pedidos personales, modificar roles de usuario y gestionar productos. Los endpoints públicos como GET /producto no requieren autenticación.
 - Los roles determinan el acceso: solo `ADMIN` puede eliminar o actualizar pedidos de otros usuarios.
 - Las respuestas de error están normalizadas y se evita exponer información sensible.
+- Se encripta la contraseña de los usuarios al almacenar en la base de datos.
 
 ## 🗃️ Sobre la Base de Datos
 Se utilizó MySQL como sistema de base de datos relacional. 
@@ -119,86 +120,133 @@ Los endpoints disponibles son:
 | PUT    | `/admin/usuarios/{id}/rol`     | Cambiar rol del usuario (solo usuarios con rol admin)             |
 | GET    | `/producto`                    | Listar todos los productos                       |
 | GET    | `/producto/{id}`               | Ver un producto por ID                           |
-| POST   | `/producto`                    | Crear nuevo producto                             |
-| PUT    | `/producto/{id}`               | Editar producto                                  |
-| DELETE | `/producto/{id}`               | Eliminar producto                                |
-| GET    | `/pedido`                      | Listar todos los pedidos                         |
+| POST   | `/producto`                    | Crear nuevo producto (solo usuarios con rol admin)                          |
+| PUT    | `/producto/{id}`               | Editar producto (solo usuarios con rol admin)                                 |
+| DELETE | `/producto/{id}`               | Eliminar producto (solo usuarios con rol admin)                             |
+| GET    | `/pedido`                      | Listar todos los pedidos (solo usuarios con rol admin)                      |
 | GET    | `/pedido/{id}`                 | Ver un pedido con sus productos                  |
 | POST   | `/pedido`                      | Crear un nuevo pedido                            |
 | PUT    | `/pedido/{id}`                 | Actualizar un pedido (solo usuarios con rol admin)                |
 | DELETE | `/pedido/{id}`                 | Eliminar un pedido (solo usuarios con rol admin)                  |
 | GET    | `/mis-pedidos`                | Listar pedidos del usuario autenticado           |
 
-
-
 ## 🖥️ Capturas de Pantalla
 ### Operaciones CRUD
-Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para los productos.
+Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para los distintos endpoints disponibles.
 
 #### register
 - **POST**
+![POST-register](https://github.com/user-attachments/assets/db36672c-9644-482d-9767-e1142ebe333a)
 
 #### login
 - **POST**
+![POST-login](https://github.com/user-attachments/assets/b9cbe4f5-ae2f-42d2-8412-1b6bb868175a)
 
 #### usuarios
-- **GET**
+- **GET /admin/usuarios**
 
-- **PUT**
+*Con usuario SHOPPER*
+![GET-admin-usuarios-SHOPPER](https://github.com/user-attachments/assets/0e6ae9f2-81f5-42bf-a227-85149eb7670a)
+
+*Con usuario ADMIN*
+![GET-admin-usuarios-ADMIN](https://github.com/user-attachments/assets/c1722329-b29f-4743-89a7-323f57ae5b81)
+
+- **PUT /admin/usuarios/{id}/rol**
+
+*Con usuario SHOPPER*
+![PUT-admin-usuarios-SHOPPER](https://github.com/user-attachments/assets/1b870c53-913a-4755-b8d5-afdd59371e5d)
+
+*Con usuario ADMIN*
+![PUT-admin-usuarios-ADMIN](https://github.com/user-attachments/assets/f2413ac0-98a8-4f6e-8e0c-4aef9cb2ef50)
 
 #### producto
 - **POST**
+ 
+*Con usuario SHOPPER*
+![POST-producto-SHOPPER](https://github.com/user-attachments/assets/3d589c69-13a2-4ba6-9728-790fcef3f070)
+
+*Con usuario ADMIN*
 ![POST](https://github.com/user-attachments/assets/91fb7661-240f-4ce3-9a9f-de05aea44f90)
 
 - **GET**
 ![GET](https://github.com/user-attachments/assets/2380934f-cc4c-4479-b4f4-17d755e95946)
 
 - **PUT**
+
+*Con usuario ADMIN*
 ![PUT](https://github.com/user-attachments/assets/1b066c50-fd18-496b-934f-91e1ec334a6e)
 
 - **DELETE**
+
+*Con usuario ADMIN*
 ![DELETE](https://github.com/user-attachments/assets/1648eeee-97d9-453c-8a56-326316bd1508)
 
 #### pedido
 - **POST**
+![POST-pedido](https://github.com/user-attachments/assets/c347a5e6-fde3-4932-bb6b-665d39ca3c73)
+
 
 - **GET**
+
+*Con usuario ADMIN*
+![GET-pedido](https://github.com/user-attachments/assets/d5782761-b0af-4283-9379-3d467959d346)
 
 - **PUT**
 
+*Con usuario ADMIN*
+![PUT-pedido](https://github.com/user-attachments/assets/fdc0c858-ec52-4e2e-ba9c-1bbf5edd5c2f)
+
 - **DELETE**
+
+*Con usuario ADMIN*
+![DELETE-pedido](https://github.com/user-attachments/assets/36ab8671-301b-4096-8d7a-b9ee7f7df1d9)
+
 
 #### mis-pedidos
 - **GET**
+![GET-mis-pedidos](https://github.com/user-attachments/assets/c2c0d6a7-7922-4c61-8799-c3161398a828)
+
+### Almacenamiento de contraseña usando hash
+![password](https://github.com/user-attachments/assets/873e63c6-8e91-4cb3-8a51-e14f05f364b2)
 
 
 ## 📌 Instrucciones para Ejecutar
 1. Clonar este repositorio:
-```bash ```
-``` git clone https://github.com/tu_usuario/ecommerce-B2C-backend.git ``` 
-
+```bash
+git clone https://github.com/tu_usuario/ecommerce-B2C-backend.git
+``` 
 
 2. Instalar dependencias CodeIgniter4:
-```composer install```
+```bash
+composer install
+```
 
-3. Copiar el archivo .env y configurar entorno:
-```cp env .env```
+4. Copiar el archivo .env y configurar entorno:
+```bash
+cp env .env
+```
 
 Editar las siguientes líneas:
-<pre><code>CI_ENVIRONMENT = development
+```ini
+CI_ENVIRONMENT = development
 database.default.hostname = localhost
 database.default.database = ecommerce
 database.default.username = root
 database.default.password =
-database.default.DBDriver = MySQLi </code></pre>
+database.default.DBDriver = MySQLi
+```
 
 4. Crear la base de datos ecommerce desde phpMyAdmin o línea de comandos.
 
 5. Ejecutar migraciones para crear la tabla:
-```php spark migrate```
+```bash
+php spark migrate
+```
 
-6. Iniciar el servidor de desarrollo:
-```php spark serve```
+7. Iniciar el servidor de desarrollo:
+```bash
+php spark serve
+```
 
 La API estará disponible en: http://localhost:8080/
 
