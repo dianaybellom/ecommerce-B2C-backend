@@ -154,4 +154,10 @@ class ProductoController extends ResourceController
 
         return $this->respondDeleted(['mensaje' => 'Producto eliminado']);
     }
+
+    public function optionsHandler()
+    {
+        return $this->response->setStatusCode(200);
+    }
+
 }
