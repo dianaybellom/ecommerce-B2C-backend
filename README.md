@@ -8,7 +8,7 @@ Este es el backend de una plataforma de ecommerce desarrollado con [CodeIgniter 
 - [Arquitectura del Sistema](#-arquitectura-del-sistema)
 - [Autenticación y Seguridad](#-autenticación-y-seguridad)
 - [Sobre la Base de Datos](#️-sobre-la-base-de-datos)
-- [Endpoints](#endpoints)
+- [Endpoints](#️-endpoints)
 - [Capturas de Pantalla](#️-capturas-de-pantalla)
     - [Operaciones CRUD](#operaciones-crud)
         - [register](#register)
@@ -111,24 +111,25 @@ Se cuentan con las siguientes tablas y campos:
 ## ⚙️ Endpoints
 Los endpoints disponibles son:
 
-| Método | Ruta                            | Descripción                                      |
-|--------|----------------------------------|--------------------------------------------------|
-| POST   | `/register`                     | Registro de nuevos usuarios                      |
-| POST   | `/login`                        | Inicio de sesión                                 |
-| GET    | `/logout`                       | Cierre de sesión                                 |
-| GET    | `/admin/usuarios`              | Listar todos los usuarios (solo usuarios con rol admin)           |
-| PUT    | `/admin/usuarios/{id}/rol`     | Cambiar rol del usuario (solo usuarios con rol admin)             |
-| GET    | `/producto`                    | Listar todos los productos                       |
-| GET    | `/producto/{id}`               | Ver un producto por ID                           |
-| POST   | `/producto`                    | Crear nuevo producto (solo usuarios con rol admin)                          |
-| PUT    | `/producto/{id}`               | Editar producto (solo usuarios con rol admin)                                 |
-| DELETE | `/producto/{id}`               | Eliminar producto (solo usuarios con rol admin)                             |
-| GET    | `/pedido`                      | Listar todos los pedidos (solo usuarios con rol admin)                      |
-| GET    | `/pedido/{id}`                 | Ver un pedido con sus productos                  |
-| POST   | `/pedido`                      | Crear un nuevo pedido                            |
-| PUT    | `/pedido/{id}`                 | Actualizar un pedido (solo usuarios con rol admin)                |
-| DELETE | `/pedido/{id}`                 | Eliminar un pedido (solo usuarios con rol admin)                  |
-| GET    | `/mis-pedidos`                | Listar pedidos del usuario autenticado           |
+| Método | Ruta | Descripción | Ejemplo |
+|--------|------|-------------|---------|
+| POST | `/register` | Registro de nuevos usuarios | <pre><code>curl -X POST http://localhost:8080/register \ -H "Content-Type: application/json" \ -d '{"nombre":"Diana","apellido":"Bello 2","fecha_nacimiento":"1990-04-02","correo":"diana2@example.com","contrasena":"supersecreto","telefono":"123456789"}'</code></pre> |
+| POST | `/login` | Inicio de sesión | <pre><code>curl -X POST http://localhost:8080/login \ -H "Content-Type: application/json" \ -d '{"correo":"diana@example.com","contrasena":"supersecreto"}'</code></pre> |
+| GET | `/logout` | Cierre de sesión | <pre><code>curl http://localhost:8080/logout</code></pre> |
+| GET | `/admin/usuarios` | Listar todos los usuarios (solo admin) | <pre><code>curl http://localhost:8080/admin/usuarios</code></pre> |
+| PUT | `/admin/usuarios/{id}/rol` | Cambiar rol del usuario (solo admin) | <pre><code>curl -X PUT http://localhost:8080/admin/usuarios/2/rol \ -H "Content-Type: application/json" \ -d '{"rol":"ADMIN"}'</code></pre> |
+| GET | `/producto` | Listar todos los productos | <pre><code>curl http://localhost:8080/producto</code></pre> |
+| GET | `/producto/{id}` | Ver un producto por ID | <pre><code>curl http://localhost:8080/producto/1</code></pre> |
+| POST | `/producto` | Crear nuevo producto (solo admin) | <pre><code>curl -X POST http://localhost:8080/producto \ -H "Content-Type: application/json" \ -d '{"nombre":"Blusa Fleur Futur","categoria":"Blusas","precio":370,"stock":5,"descripcion":"Florece como los cerezos al alba, una pieza que une suavidad, brillo y un estilo vanguardista."}'</code></pre> |
+| PUT | `/producto/{id}` | Editar producto (solo admin) | <pre><code>curl -X PUT http://localhost:8080/producto/4 \ -H "Content-Type: application/json" \ -d '{"nombre":"Robe Sakura Dreams MODIFIED"}'</code></pre> |
+| DELETE | `/producto/{id}` | Eliminar producto (solo admin) | <pre><code>curl -X DELETE http://localhost:8080/producto/3</code></pre> |
+| GET | `/pedido` | Listar todos los pedidos (solo admin) | <pre><code>curl http://localhost:8080/pedido</code></pre> |
+| GET | `/pedido/{id}` | Ver un pedido con sus productos | <pre><code>curl http://localhost:8080/pedido/1</code></pre> |
+| POST | `/pedido` | Crear un nuevo pedido | <pre><code>curl -X POST http://localhost:8080/pedido \ -H "Content-Type: application/json" \ -d '{"productos":[{"producto_id":1,"cantidad":2},{"producto_id":2,"cantidad":1}]}'</code></pre> |
+| PUT | `/pedido/{id}` | Actualizar un pedido (solo admin) | <pre><code>curl -X PUT http://localhost:8080/pedido/2 \ -H "Content-Type: application/json" \ -d '{"estado":"confirmado"}'</code></pre> |
+| DELETE | `/pedido/{id}` | Eliminar un pedido (solo admin) | <pre><code>curl -X DELETE http://localhost:8080/pedido/2</code></pre> |
+| GET | `/mis-pedidos` | Listar pedidos del usuario autenticado | <pre><code>curl http://localhost:8080/mis-pedidos</code></pre> |
+
 
 ## 🖥️ Capturas de Pantalla
 ### Operaciones CRUD
