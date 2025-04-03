@@ -11,6 +11,7 @@ $routes->get('/', 'Home::index');
 $routes->resource('producto', ['controller' => 'ProductoController']);
 // habilita las rutas REST de usuarios
 $routes->post('register', 'AuthController::register');
+$routes->options('register', 'AuthController::optionsHandler');
 $routes->post('login', 'AuthController::login');
 $routes->get('logout', 'AuthController::logout');
 // habilita las rutas RESTful completo para pedidos

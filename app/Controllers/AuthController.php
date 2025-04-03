@@ -20,6 +20,12 @@ class AuthController extends ResourceController
             return $this->failValidationError('Correo y contraseña son obligatorios.');
         }
 
+        // Verificar si ya existe un usuario con ese correo
+        $usuarioExistente = $this->model->where('correo', $data['correo'])->first();
+        if ($usuarioExistente) {
+            return $this->failResourceExists('El correo ya está registrado.');
+        }
+
         // Hashear la contraseña
         $data['contrasena'] = password_hash($data['contrasena'], PASSWORD_DEFAULT);
 
@@ -33,6 +39,7 @@ class AuthController extends ResourceController
 
         return $this->respondCreated(['mensaje' => 'Usuario registrado exitosamente']);
     }
+
 
     // Inicio de sesión
     public function login()
@@ -71,4 +78,10 @@ class AuthController extends ResourceController
         session()->destroy();
         return $this->respond(['mensaje' => 'Sesión cerrada']);
     }
+
+    public function optionsHandler()
+    {
+        return $this->response->setStatusCode(200);
+    }
+
 }
