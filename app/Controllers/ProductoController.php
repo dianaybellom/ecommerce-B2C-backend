@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Producto;
+use App\Models\Usuario;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 
@@ -12,6 +13,15 @@ class ProductoController extends ResourceController
 
     protected $modelName = Producto::class;
     protected $format    = 'json';
+
+    private function esAdmin(): bool
+    {
+        $usuarioId = session()->get('usuario_id');
+        if (!$usuarioId) return false;
+
+        $usuario = (new Usuario())->find($usuarioId);
+        return $usuario && $usuario['rol'] === 'ADMIN';
+    }
 
     // GET /producto
     public function index()
@@ -31,20 +41,21 @@ class ProductoController extends ResourceController
     // POST /producto
     public function create()
     {
-        $data = $this->request->getJSON(true);
+        if (!$this->esAdmin()) {
+            return $this->failUnauthorized('Solo los administradores pueden crear productos.');
+        }
 
+        $data = $this->request->getJSON(true);
         if (!$data) {
             return $this->failValidationError('No se proporcionaron datos.');
         }
 
         if (isset($data[0])) {
-            // Inserción múltiple
             if (!$this->model->insertBatch($data)) {
                 return $this->failServerError('No se pudieron insertar los productos.');
             }
             return $this->respondCreated(['mensaje' => 'Productos creados exitosamente']);
         } else {
-            // Inserción única
             if (!$this->model->insert($data)) {
                 return $this->failServerError('No se pudo insertar el producto.');
             }
@@ -55,6 +66,10 @@ class ProductoController extends ResourceController
     // PUT /producto/{id}
     public function update($id = null)
     {
+        if (!$this->esAdmin()) {
+            return $this->failUnauthorized('Solo los administradores pueden editar productos.');
+        }
+
         $data = $this->request->getJSON(true);
         if (empty($data)) {
             return $this->failValidationError('No se recibieron datos para actualizar.');
@@ -70,6 +85,10 @@ class ProductoController extends ResourceController
     // DELETE /producto/{id}
     public function delete($id = null)
     {
+        if (!$this->esAdmin()) {
+            return $this->failUnauthorized('Solo los administradores pueden eliminar productos.');
+        }
+
         if (!$this->model->delete($id)) {
             return $this->failServerError('No se pudo eliminar el producto.');
         }
