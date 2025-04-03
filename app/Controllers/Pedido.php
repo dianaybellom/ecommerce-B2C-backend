@@ -204,5 +204,10 @@ class Pedido extends ResourceController
             'pedido_id' => $id
         ]);
     }
+
+    public function optionsHandler($param = null)
+    {
+        return $this->response->setStatusCode(200);
+    }
     
 }

@@ -54,4 +54,10 @@ class Admin extends ResourceController
 
         return $this->respond($this->model->findAll());
     }
+
+    public function optionsHandler($param = null)
+    {
+        return $this->response->setStatusCode(200);
+    }
+
 }
