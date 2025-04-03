@@ -105,13 +105,13 @@ Se cuentan con las siguientes tablas y campos:
 
 
 ### Diagrama de relación entre tablas
-
+![ecommerce-db-diagram](https://github.com/user-attachments/assets/4c57c0a6-6d7b-4778-bb63-47a716825fa7)
 
 
 ## ⚙️ Endpoints
 Los endpoints disponibles son:
 
-| Método | Ruta | Descripción | Ejemplo |
+| Método | Ruta | Descripción |Ejemplo |
 |--------|------|-------------|---------|
 | POST | `/register` | Registro de nuevos usuarios | <pre><code>curl -X POST http://localhost:8080/register \ -H "Content-Type: application/json" \ -d '{"nombre":"Diana","apellido":"Bello 2","fecha_nacimiento":"1990-04-02","correo":"diana2@example.com","contrasena":"supersecreto","telefono":"123456789"}'</code></pre> |
 | POST | `/login` | Inicio de sesión | <pre><code>curl -X POST http://localhost:8080/login \ -H "Content-Type: application/json" \ -d '{"correo":"diana@example.com","contrasena":"supersecreto"}'</code></pre> |
