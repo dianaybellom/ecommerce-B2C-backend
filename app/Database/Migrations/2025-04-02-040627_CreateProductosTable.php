@@ -43,6 +43,11 @@ class CreateProductosTable extends Migration
 					'type' => 'DATETIME',
 					'null' => true,
 				],
+				'imagen' => [
+					'type' => 'VARCHAR', 
+					'constraint' => 255, 
+					'null' => true
+				],
 			]);
 
 			$this->forge->addKey('id', true);

@@ -137,10 +137,12 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 
 #### register
 - **POST**
+
 ![POST-register](https://github.com/user-attachments/assets/db36672c-9644-482d-9767-e1142ebe333a)
 
 #### login
 - **POST**
+
 ![POST-login](https://github.com/user-attachments/assets/b9cbe4f5-ae2f-42d2-8412-1b6bb868175a)
 
 #### usuarios
@@ -170,6 +172,7 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 ![POST](https://github.com/user-attachments/assets/91fb7661-240f-4ce3-9a9f-de05aea44f90)
 
 - **GET**
+
 ![GET](https://github.com/user-attachments/assets/2380934f-cc4c-4479-b4f4-17d755e95946)
 
 - **PUT**
@@ -184,6 +187,7 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 
 #### pedido
 - **POST**
+
 ![POST-pedido](https://github.com/user-attachments/assets/c347a5e6-fde3-4932-bb6b-665d39ca3c73)
 
 
@@ -205,6 +209,7 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 
 #### mis-pedidos
 - **GET**
+
 ![GET-mis-pedidos](https://github.com/user-attachments/assets/c2c0d6a7-7922-4c61-8799-c3161398a828)
 
 ### Almacenamiento de contraseña usando hash
@@ -252,9 +257,9 @@ php spark serve
 La API estará disponible en: http://localhost:8080/
 
 ## 📝 Disclaimer
-Este proyecto ha sido desarrollado con el apoyo activo de ChatGPT, un modelo de lenguaje de inteligencia artificial creado por OpenAI.
+Este proyecto ha sido desarrollado con el apoyo de ChatGPT, un modelo de lenguaje de inteligencia artificial creado por OpenAI.
 
-Debido a mi limitado expertise en desarrollo de software, creé un GPT como asistente de desarrollo, para:
+Debido a mi nivel de expertise en desarrollo de software, creé un GPT como asistente de desarrollo, para:
 - Generar código base funcional
 - Resolver errores y mensajes de compilación
 - Explicar buenas prácticas

@@ -18,7 +18,8 @@ class Producto extends Model
         'descripcion', 
         'categoria', 
         'precio', 
-        'stock'
+        'stock',
+        'imagen'
     ];
 
     // ✅ Manejo automático de fechas personalizadas
