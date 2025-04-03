@@ -64,14 +64,15 @@ Se utilizó MySQL como sistema de base de datos relacional.
 Se cuentan con las siguientes tablas y campos:
 
 - **productos**:
-    - `id`
-    - `nombre`
-    - `descripcion`
-    - `categoria`
-    - `precio`
-    - `stock`
-    - `fecha_creacion`
-    - `fecha_actualizacion`
+    - `id`: identificador único del producto.
+    - `nombre`: nombre del producto.
+    - `descripcion`: descripción detallada del producto.
+    - `categoria`: categoría a la que pertenece el producto.
+    - `precio`: precio unitario del producto.
+    - `stock`: cantidad disponible en inventario.
+    - `fecha_creacion`: fecha en que se creó el registro.
+    - `fecha_actualizacion`: fecha en que se actualizó por última vez el registro.
+    - `imagen`: nombre del archivo de imagen asociado al producto (ruta relativa en `public/uploads/productos/`)
 
 - **usuarios**
     - `id`: identificador único del usuario.
@@ -120,7 +121,7 @@ Los endpoints disponibles son:
 | PUT | `/admin/usuarios/{id}/rol` | Cambiar rol del usuario (solo admin) | <pre><code>curl -X PUT http://localhost:8080/admin/usuarios/2/rol \ -H "Content-Type: application/json" \ -d '{"rol":"ADMIN"}'</code></pre> |
 | GET | `/producto` | Listar todos los productos | <pre><code>curl http://localhost:8080/producto</code></pre> |
 | GET | `/producto/{id}` | Ver un producto por ID | <pre><code>curl http://localhost:8080/producto/1</code></pre> |
-| POST | `/producto` | Crear nuevo producto (solo admin) | <pre><code>curl -X POST http://localhost:8080/producto \ -H "Content-Type: application/json" \ -d '{"nombre":"Blusa Fleur Futur","categoria":"Blusas","precio":370,"stock":5,"descripcion":"Florece como los cerezos al alba, una pieza que une suavidad, brillo y un estilo vanguardista."}'</code></pre> |
+| POST | `/producto` | Crear nuevo producto (solo admin) | <pre><code>curl -X POST http://localhost:8080/producto \ -H "Content-Type: application/json" \ -d '{"nombre":"Blusa Fleur Futur","categoria":"Blusas","precio":370,"stock":5,"descripcion":"Florece como los cerezos al alba, una pieza que une suavidad, brillo y un estilo vanguardista.","imagen_base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA..."}'</code></pre> |
 | PUT | `/producto/{id}` | Editar producto (solo admin) | <pre><code>curl -X PUT http://localhost:8080/producto/4 \ -H "Content-Type: application/json" \ -d '{"nombre":"Robe Sakura Dreams MODIFIED"}'</code></pre> |
 | DELETE | `/producto/{id}` | Eliminar producto (solo admin) | <pre><code>curl -X DELETE http://localhost:8080/producto/3</code></pre> |
 | GET | `/pedido` | Listar todos los pedidos (solo admin) | <pre><code>curl http://localhost:8080/pedido</code></pre> |
