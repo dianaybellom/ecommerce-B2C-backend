@@ -106,7 +106,7 @@ Se cuentan con las siguientes tablas y campos:
 
 
 ### Diagrama de relación entre tablas
-![ecommerce-db-diagram](https://github.com/user-attachments/assets/4c57c0a6-6d7b-4778-bb63-47a716825fa7)
+![ecommerce-db-diagram](https://github.com/user-attachments/assets/c589e2d5-6fda-4072-bc78-a7a89b1c22c6)
 
 
 ## ⚙️ Endpoints
@@ -170,7 +170,8 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 ![POST-producto-SHOPPER](https://github.com/user-attachments/assets/3d589c69-13a2-4ba6-9728-790fcef3f070)
 
 *Con usuario ADMIN*
-![POST](https://github.com/user-attachments/assets/91fb7661-240f-4ce3-9a9f-de05aea44f90)
+![POST-producto-ADMIN](https://github.com/user-attachments/assets/ab8b7f8c-316c-4844-b96b-d5cd6a3a9b5a)
+
 
 - **GET**
 
