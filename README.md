@@ -256,7 +256,7 @@ php spark migrate
 php spark serve
 ```
 
-La API estará disponible en: http://localhost:8080/
+La API estará disponible en: http://localhost:8080/ .
 
 ## 📝 Disclaimer
 Este proyecto ha sido desarrollado con el apoyo de ChatGPT, un modelo de lenguaje de inteligencia artificial creado por OpenAI.
