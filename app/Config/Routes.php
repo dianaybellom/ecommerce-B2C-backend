@@ -19,9 +19,12 @@ $routes->post('login', 'AuthController::login');
 $routes->options('login', 'AuthController::optionsHandler');
 $routes->get('logout', 'AuthController::logout');
 $routes->options('logout', 'AuthController::optionsHandler');
+$routes->get('usuario-actual', 'AuthController::usuarioActual');
+$routes->get('usuario-actual', 'AuthController::optionsHandler');
 
 // habilita las rutas RESTful completo para pedidos
 $routes->resource('pedido'); 
+$routes->options('pedido', 'Pedido::optionsHandler');
 $routes->get('mis-pedidos', 'Pedido::misPedidos');
 $routes->options('pedido/(:segment)', 'Pedido::optionsHandler/$1');
 

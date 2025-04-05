@@ -79,6 +79,24 @@ class AuthController extends ResourceController
         return $this->respond(['mensaje' => 'Sesión cerrada']);
     }
 
+    // Obtener usuario actual desde la sesión
+    public function usuarioActual()
+    {
+        $usuarioId = session()->get('usuario_id');
+        $rol = session()->get('rol');
+
+        if (!$usuarioId) {
+            return $this->respond(['autenticado' => false]);
+        }
+
+        return $this->respond([
+            'autenticado' => true,
+            'usuario_id' => $usuarioId,
+            'rol' => $rol
+        ]);
+    }
+
+
     public function optionsHandler()
     {
         return $this->response->setStatusCode(200);
