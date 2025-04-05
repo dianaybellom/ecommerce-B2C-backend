@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           source: "."
           target: "/var/www/html/backend"
-          rm: true
+          rm: false
 
       - name: Setup Backend on EC2
         uses: appleboy/ssh-action@master
