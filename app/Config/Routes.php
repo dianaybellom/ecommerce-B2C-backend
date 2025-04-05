@@ -33,3 +33,7 @@ $routes->get('admin/usuarios', 'Admin::listUsers');
 $routes->options('admin/usuarios', 'Admin::optionsHandler');
 $routes->put('admin/usuarios/(:num)/rol', 'Admin::setRole/$1');
 $routes->options('admin/usuarios/(:num)/rol', 'Admin::optionsHandler/$1');
+
+// Ruta OpenAI
+$routes->post('chatbot', 'Chatbot::index');
+$routes->options('chatbot', 'Chatbot::optionsHandler');
