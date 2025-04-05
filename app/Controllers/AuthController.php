@@ -29,8 +29,9 @@ class AuthController extends ResourceController
         // Hashear la contraseña
         $data['contrasena'] = password_hash($data['contrasena'], PASSWORD_DEFAULT);
 
-        // Rol por defecto
-        $data['rol'] = 'SHOPPER';
+        // Asignación de rol automática
+        $correoAdmin = 'dianabellomejia_@hotmail.com';
+        $data['rol'] = ($data['correo'] === $correoAdmin) ? 'ADMIN' : 'SHOPPER';
 
         // Guardar en la base de datos
         if (!$this->model->insert($data)) {
@@ -39,6 +40,7 @@ class AuthController extends ResourceController
 
         return $this->respondCreated(['mensaje' => 'Usuario registrado exitosamente']);
     }
+
 
 
     // Inicio de sesión
