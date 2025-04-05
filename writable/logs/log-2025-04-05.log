@@ -1,0 +1,107 @@
+CRITICAL - 2025-04-05 03:44:16 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "C:\Users\diana\Documents\xampp\htdocs\ecommerce-B2C-backend\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 61.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(61): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('C:\\Users\\diana\\Documents\\xampp\\htdocs\\ecommerce-B2C-backend\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(1000): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(320): service('codeigniter')
+23 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-04-05 03:44:56 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "C:\Users\diana\Documents\xampp\htdocs\ecommerce-B2C-backend\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 61.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(61): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('C:\\Users\\diana\\Documents\\xampp\\htdocs\\ecommerce-B2C-backend\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(1000): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(320): service('codeigniter')
+23 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-04-05 03:45:56 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "C:\Users\diana\Documents\xampp\htdocs\ecommerce-B2C-backend\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 61.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(61): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('C:\\Users\\diana\\Documents\\xampp\\htdocs\\ecommerce-B2C-backend\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(1000): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(320): service('codeigniter')
+23 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2025-04-05 01:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:47:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:58:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-05 01:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-05 01:59:11 --> Error: Call to undefined method App\Controllers\ProductoController::failValidationError()
+[Method: POST, Route: producto]
+in APPPATH\Controllers\ProductoController.php on line 97.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductoController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\diana\\Documents\\xampp\\htdocs\\ecommerce-B2C-backend\\public\\index.php')

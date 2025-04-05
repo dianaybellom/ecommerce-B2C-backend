@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
+class ComposerStaticInitc78c175c04f9b9e6f3560f632d58556c
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -100,8 +100,17 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
     );
 
     public static $classMap = array (
+        'App\\Controllers\\Admin' => __DIR__ . '/../..' . '/app/Controllers/Admin.php',
+        'App\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Controllers/AuthController.php',
         'App\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Controllers/BaseController.php',
         'App\\Controllers\\Home' => __DIR__ . '/../..' . '/app/Controllers/Home.php',
+        'App\\Controllers\\Pedido' => __DIR__ . '/../..' . '/app/Controllers/Pedido.php',
+        'App\\Controllers\\ProductoController' => __DIR__ . '/../..' . '/app/Controllers/ProductoController.php',
+        'App\\Filters\\Cors' => __DIR__ . '/../..' . '/app/Filters/Cors.php',
+        'App\\Models\\PedidoModel' => __DIR__ . '/../..' . '/app/Models/PedidoModel.php',
+        'App\\Models\\PedidosDetalle' => __DIR__ . '/../..' . '/app/Models/PedidosDetalle.php',
+        'App\\Models\\Producto' => __DIR__ . '/../..' . '/app/Models/Producto.php',
+        'App\\Models\\Usuario' => __DIR__ . '/../..' . '/app/Models/Usuario.php',
         'CodeIgniter\\API\\ResponseTrait' => __DIR__ . '/..' . '/codeigniter4/framework/system/API/ResponseTrait.php',
         'CodeIgniter\\Autoloader\\Autoloader' => __DIR__ . '/..' . '/codeigniter4/framework/system/Autoloader/Autoloader.php',
         'CodeIgniter\\Autoloader\\FileLocator' => __DIR__ . '/..' . '/codeigniter4/framework/system/Autoloader/FileLocator.php',
@@ -2557,10 +2566,10 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit657ac079313fab046eb8c29fe1d6992b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit657ac079313fab046eb8c29fe1d6992b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit657ac079313fab046eb8c29fe1d6992b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit657ac079313fab046eb8c29fe1d6992b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc78c175c04f9b9e6f3560f632d58556c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc78c175c04f9b9e6f3560f632d58556c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc78c175c04f9b9e6f3560f632d58556c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc78c175c04f9b9e6f3560f632d58556c::$classMap;
 
         }, null, ClassLoader::class);
     }

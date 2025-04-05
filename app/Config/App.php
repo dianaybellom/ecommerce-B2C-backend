@@ -199,4 +199,21 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+        /**
+     * --------------------------------------------------------------------------
+     * Cookie Secure (HTTPS)
+     * --------------------------------------------------------------------------
+     * Set to true if using HTTPS, false in development (localhost).
+     */
+    public bool $cookieSecure = false;
+
+    /**
+     * --------------------------------------------------------------------------
+     * SameSite attribute for session cookies
+     * --------------------------------------------------------------------------
+     * Valid values: 'Lax', 'Strict', 'None'
+     */
+    public string $cookieSameSite = 'Lax';
+
 }

@@ -6,8 +6,17 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\Admin' => $baseDir . '/app/Controllers/Admin.php',
+    'App\\Controllers\\AuthController' => $baseDir . '/app/Controllers/AuthController.php',
     'App\\Controllers\\BaseController' => $baseDir . '/app/Controllers/BaseController.php',
     'App\\Controllers\\Home' => $baseDir . '/app/Controllers/Home.php',
+    'App\\Controllers\\Pedido' => $baseDir . '/app/Controllers/Pedido.php',
+    'App\\Controllers\\ProductoController' => $baseDir . '/app/Controllers/ProductoController.php',
+    'App\\Filters\\Cors' => $baseDir . '/app/Filters/Cors.php',
+    'App\\Models\\PedidoModel' => $baseDir . '/app/Models/PedidoModel.php',
+    'App\\Models\\PedidosDetalle' => $baseDir . '/app/Models/PedidosDetalle.php',
+    'App\\Models\\Producto' => $baseDir . '/app/Models/Producto.php',
+    'App\\Models\\Usuario' => $baseDir . '/app/Models/Usuario.php',
     'CodeIgniter\\API\\ResponseTrait' => $vendorDir . '/codeigniter4/framework/system/API/ResponseTrait.php',
     'CodeIgniter\\Autoloader\\Autoloader' => $vendorDir . '/codeigniter4/framework/system/Autoloader/Autoloader.php',
     'CodeIgniter\\Autoloader\\FileLocator' => $vendorDir . '/codeigniter4/framework/system/Autoloader/FileLocator.php',
