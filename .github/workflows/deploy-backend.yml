@@ -43,9 +43,11 @@ jobs:
           script: |
             cd /var/www/html/backend
             composer install --no-dev
-            sed -i "s/database.default.hostname = .*/database.default.hostname = localhost/" .env
-            sed -i "s/database.default.database = .*/database.default.database = ecommerce/" .env
-            sed -i "s/database.default.username = .*/database.default.username = ecom_user/" .env
-            sed -i "s/database.default.password = .*/database.default.password = 73uOTM8MqFa4/" .env
-            sed -i "s/OPENAI_API_KEY=.*/OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}/" .env
+
+            # Crear directorio writable/cache con permisos adecuados
+            sudo mkdir -p writable/cache
+            sudo chown -R www-data:ubuntu writable
+            sudo chmod -R 775 writable
+
+            # Asegurar permisos correctos
             sudo chown -R www-data:www-data /var/www/html/backend
