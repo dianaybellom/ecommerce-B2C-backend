@@ -43,9 +43,11 @@ jobs:
           script: |
             cd /var/www/html/backend
             composer install --no-dev
-            # Crear carpetas necesarias con permisos adecuados
+
+            # Crear directorio writable/cache con permisos adecuados
             sudo mkdir -p writable/cache
             sudo chown -R www-data:ubuntu writable
             sudo chmod -R 775 writable
-            # Asegurar propietario de todos los archivos (excepto .env)
-            sudo chown -R www-data:www-data .
+
+            # Asegurar permisos correctos
+            sudo chown -R www-data:www-data /var/www/html/backend
