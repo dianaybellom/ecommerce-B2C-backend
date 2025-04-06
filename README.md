@@ -242,7 +242,8 @@ Las siguientes capturas muestran la operaciones CRUD realizadas en Postman para 
 El chatbot está implementado en el controlador Chatbot.php dentro de app/Controllers. Este controlador expone el endpoint:
 
 **POST** /chatbot
-//TODO: INSERTAR IMAGEN
+![POST-chatbot](https://github.com/user-attachments/assets/79f171af-af7b-47d9-a6c0-a23d563d8ad4)
+
 
 ### Almacenamiento de contraseña usando hash
 ![password](https://github.com/user-attachments/assets/873e63c6-8e91-4cb3-8a51-e14f05f364b2)
@@ -364,14 +365,14 @@ Para desplegar automáticamente este backend en un servidor EC2 de AWS al hacer 
     sudo a2enmod rewrite
     sudo systemctl restart apache2
     ```
-3. Crear secrets necesarios en Github, dentro del repositorio en la ruta 'Settings > Secrets and variables > Actions'  agregar:
+5. Crear secrets necesarios en Github, dentro del repositorio en la ruta 'Settings > Secrets and variables > Actions'  agregar:
     - `EC2_HOST`: Dirección IP pública de tu instancia EC2 (ej. 3.144.119.116)
     - `EC2_KEY`: Cpntenido de archivo .pem de clave privada SSH para conectarse como ubuntu.
     - `OPENAI_API_KEY`: (Opcional) API Key de OpenAI utilizada por el chatbot.
-4. Configurar repositorio con archivo de workflow CI/CD `.github/workflows/deploy-backend.yml` (Ver el creado en este repo).
-5. Hacer push a la rama main para ejecutar el deploy automático.
-6. Verificar instalación ejecutando php spark migrate en el servidor.
-7. Probar la API accediendo a http://EC2_HOST/api/.
+6. Configurar repositorio con archivo de workflow CI/CD `.github/workflows/deploy-backend.yml` (Ver el creado en este repo).
+7. Hacer push a la rama main para ejecutar el deploy automático.
+8. Verificar instalación ejecutando `php spark migrate` en el servidor.
+9. Probar la API accediendo a http://EC2_HOST/api/.
 
 La API productiva de este repositorio está disponible en: http://3.144.119.116/api/ 
 
